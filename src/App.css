@@ -1,0 +1,73 @@
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.container {
+  background: #ffffff;
+  box-shadow: 0px 1px 7px rgba(40, 47, 45, 0.07);
+  border-radius: 4px;
+  width: 1120px;
+  margin: 0 auto;
+}
+
+.header {
+  margin: 24px 24px 16px 24px;
+}
+
+.information {
+  display: flex !important;
+}
+
+.comment {
+}
+
+.likesNumber {
+  display: flex;
+  align-items: center;
+}
+
+.likes {
+  border-radius: 50%;
+  background: linear-gradient(
+    131.96deg,
+    #96dcd0 -8.63%,
+    #6ccebd -5.56%,
+    #2db8a1 35.83%,
+    #28a38f 89.48%,
+    #208171 133.94%
+  );
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.userCommantLine-container {
+  height: 48px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.clicked {
+  font-weight: bold;
+  color: black;
+}
+
+.notClicked {
+  color: black;
+}
+
+.VectorGreen {
+  padding: 3.38px 3.94px 4.5px 3.38px;
+}
+
+.likeAndCommantLine-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 27px;
+}
+
+button {
+  all: unset;
+}
