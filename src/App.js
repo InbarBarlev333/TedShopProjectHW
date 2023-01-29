@@ -1,12 +1,10 @@
-import Vector from "./Vector.png";
-import Comment from "./Comment.png";
-import VectorGreen from "./Vector (green).png";
-import VectorBlue from "./Vector (blue).png";
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import PhotoCarousel from "./components/PhotoCarousel";
 import PhotoGallery from "./components/PhotoGallery";
+import Header from "./components/Header";
+import Likes_Comments from "./components/Likes_Comments";
 
 function App() {
   const [data, setData] = useState([]);
@@ -42,50 +40,10 @@ function App() {
 
   const users = data?.data?.slice(0, page * 6).map(
     (item, index) => (
-      <div className="container">
-        <div className="header">
-          <div className="information">
-            <div>
-              <img src={item.avatar} className="profile-picture" key={1} />
-            </div>
-            <div>
-              <div>{item.username}</div>
-              <div>{item.shopName}</div>
-            </div>
-          </div>
-          <p>{item.text}</p>
-        </div>
+      <div className="container" key={index}>
+        <Header data={item}></Header>
         <PhotoGallery data={item.images}></PhotoGallery>
-        <div className="likeAndCommantLine-container">
-          <div className="likesNumber">
-            <div className="likes">
-              <img
-                className="VectorGreen"
-                src={VectorGreen}
-                alt="VectorGreen"
-              ></img>
-            </div>
-            <div>
-              {item.didLike !== isPressed ? item.likes + 1 : item.likes} likes{" "}
-            </div>
-          </div>
-          <div className="comment"> {item.comments} comments</div>
-        </div>
-        <div className="userCommantLine-container">
-          <button
-            className={item.didLike !== isPressed ? "clicked" : "notClicked"}
-            onClick={handleClick}
-          >
-            <img
-              src={item.didLike !== isPressed ? VectorBlue : Vector}
-              alt="Vector (Stroke)"
-            ></img>
-            Like
-          </button>
-          <button>
-            <img src={Comment} alt="Comment ()"></img> comment
-          </button>
-        </div>
+        <Likes_Comments data={item}></Likes_Comments>
       </div>
     )
     //<div key={index}>{item.username}</div>

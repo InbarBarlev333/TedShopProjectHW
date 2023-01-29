@@ -10,6 +10,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 .oneImage0 {
   grid-column-start: 1;
   grid-column-end: 9;
@@ -86,6 +87,7 @@
 
 .moreThanFour3 {
   position: relative;
+  overflow: hidden;
 }
 
 .image-overlay {
@@ -100,10 +102,17 @@
 
 .number {
   position: absolute;
-  top: 50%;
+  top: 110px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 20px;
   font-weight: bold;
   color: white;
+}
+
+.num-relative {
+  position: relative;
+}
+.fourImages3 {
+  overflow: hidden;
 }

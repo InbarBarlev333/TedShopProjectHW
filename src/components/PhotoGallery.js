@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./PhotoGallery.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import PhotoSlider from "./PhotoSlider";
 
 const PhotoGallery = (props) => {
   const arrayOfImages = props;
@@ -27,9 +29,7 @@ const PhotoGallery = (props) => {
     <div className="post-image-container">
       <div className="gallery">
         {data.map((image, i) => (
-          <div className={`${howMany()}${i}`}>
-            <div className="image-overlay"></div>
-
+          <div className={`${howMany()}${i}`} key={i}>
             {i < 3 && (
               <img
                 className="gallery_image"
@@ -39,14 +39,17 @@ const PhotoGallery = (props) => {
             )}
 
             {arrayOfImages.data.length > 3 && i === 3 && (
-              <div>
-                <img
-                  className="gallery_image"
-                  src={image}
-                  alt={`${howMany()}${i}`}
-                />
-                <span className="number">+{data.length - 4}</span>
-              </div>
+              <>
+                <div className="num-relative">
+                  <div className="image-overlay"></div>
+                  <img
+                    className="gallery_image"
+                    src={image}
+                    alt={`${howMany()}${i}`}
+                  />
+                  <span className="number">+{data.length - 4}</span>
+                </div>
+              </>
             )}
           </div>
         ))}
@@ -58,6 +61,10 @@ const PhotoGallery = (props) => {
 export default PhotoGallery;
 
 /*
+
+<PhotoSlider></PhotoSlider>
+
+
 const PhotoGallery = (props) => {
   const arrayOfImages = props;
   const classN = "pics";
